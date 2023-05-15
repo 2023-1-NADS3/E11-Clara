@@ -1,0 +1,6 @@
+Integrante:  Beatriz Cândido Portela	RA: 22023095
+
+Ativiades desenvolvidas
+Preenchimento da documentação de UX do projeto contendo: manifesto, visão, pesquisa com usuário, persona, mapas de empatia e jornada do usuário, user history, wireframe, storyboards e teste de usabilidade (em conjunto com a Jacqueline).
+Finalização do desenvolvimento do protótipo e início do desenvolvimento do protótipo navegável no Figma (utilizando ferramentas próprias da plataforma).
+Atualização do andamento do projeto em conjunto com os demais integrantes para nivelar as produções do grupo.
