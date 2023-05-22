@@ -1,0 +1,67 @@
+<div *ngIf="showRegistration">
+  <form>
+    <div class="form-group">
+      <label>Nome completo*</label>
+      <input type="text" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" class="form-control" id="nome"
+        placeholder="Digite o nome" required>
+    </div>
+
+    <div class="form-group">
+      <label>Data de nascimento*</label>
+      <input type="date" [(ngModel)]="data" [ngModelOptions]="{standalone: true}" class="form-control" id="data"
+        placeholder="Digite a data" required>
+    </div>
+
+    <div class="form-group">
+      <label>E-mail*</label>
+      <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="email"
+        placeholder="Digite o email" required>
+    </div>
+
+    <div class="form-group">
+      <label>Senha*</label>
+      <input type="password" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" class="form-control" id="senha"
+        placeholder="Digite a senha" required>
+    </div>
+
+    <div class="form-group">
+      <label>Confirme sua senha*</label>
+      <input type="password" [(ngModel)]="confirmSenha" [ngModelOptions]="{standalone: true}" class="form-control"
+        id="confirmSenha" placeholder="Confirme sua senha" required>
+      <span *ngIf="senha !== confirmSenha" style="color: red;">X Senhas não batem</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" (click)="cadastrar()">Enviar</button>
+  </form>
+</div>
+
+<div *ngIf="showVerification">
+  <form>
+    <div class="form-group">
+      <label>Digite o código de 6 dígitos</label>
+      <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}" class="form-control"
+        id="codigoVerificacao" placeholder="Digite o código">
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" (click)="verificarCodigo()">Enviar</button>
+    <button class="btn btn-secondary mt-4" (click)="voltar()">Voltar</button>
+  </form>
+</div>
+
+<div *ngIf="showSuccess">
+  <h2>Usuário verificado com sucesso</h2><br>
+  <img src="caminho_da_imagem">
+</div>
+
+<div *ngIf="showUpload">
+  <h3>Upload de imagem</h3>
+  <h6>Selecione uma foto para o seu perfil</h6>
+  <img src="../../assets/emptyUser.png"><br>
+  <button type="button" class="btn btn-primary mt-4">Carregar Foto</button>
+  <button type="button" class="btn btn-success mt-4" (click)="finalizarCadastro()">Cadastrar</button>
+</div>
+
+<div *ngIf="showSuccessMessage">
+  <h2>Cadastro realizado com sucesso</h2>
+  <button type="button" class="btn btn-primary mt-4" routerLink="/signin">Ir para o login</button>
+</div>
