@@ -1,39 +1,51 @@
+<div style="position: relative; height: 100vh;">
 
 <!-- CADASTRO -->
 
-<div class="d-flex align-items-center justify-content-center vh-100">
+<div class="d-flex align-items-center justify-content-center flex-grow-1">
   <div *ngIf="showRegistration" class="container" style="margin: 10px;">
     <h4 style="font-weight: 500;" class="text-center">Olá,</h4>
     <h4 style="font-weight: 500;" class="text-center">vamos criar sua conta</h4>
     <form class="mt-4 custom-form">
       <div class="form-group py-2">
         <label style="font-size: 14px; font-weight: 600; padding: 2px;">Nome completo*</label>
-        <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="nome" required>
+        <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"
+          class="form-control form-control-lg form-control-sm"
+          style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="nome" placeholder="Nome completo" required>
       </div>
 
       <div class="form-group py-2">
         <label style="font-size: 14px; font-weight: 600; padding: 2px;">Data de nascimento*</label>
-        <input type="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="data" required>
+        <input type="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}"
+          class="form-control form-control-lg form-control-sm"
+          style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="data" required>
       </div>
 
       <div class="form-group py-2">
         <label style="font-size: 14px; font-weight: 600; padding: 2px;">E-mail*</label>
-        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="email" required>
+        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"
+          class="form-control form-control-lg form-control-sm"
+          style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="email"  placeholder="E-mail" required>
       </div>
 
       <div class="form-group py-2">
         <label style="font-size: 14px; font-weight: 600; padding: 2px;">Senha*</label>
-        <input type="password" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="senha" required>
+        <input type="password" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}"
+          class="form-control form-control-lg form-control-sm"
+          style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="senha"  placeholder="Senha" required>
       </div>
 
       <div class="form-group py-2">
         <label style="font-size: 14px; font-weight: 600; padding: 2px;">Confirme sua senha*</label>
-        <input type="password" [(ngModel)]="confirmSenha" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="confirmSenha" required>
+        <input type="password" [(ngModel)]="confirmSenha" [ngModelOptions]="{standalone: true}"
+          class="form-control form-control-lg form-control-sm"
+          style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="confirmSenha"  placeholder="Confirmar senha" required>
         <span *ngIf="senha !== confirmSenha" style="color: red; font-size: 14px;">X Senhas não batem</span>
       </div>
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary mt-4" style="background-color: #1F9BC1; border: none;" (click)="cadastrar()">Avançar</button>
+        <button type="submit" class="btn btn-primary mt-4"
+          style="padding:6px 25px;background-color: #1F9BC1; border: none;" (click)="cadastrar()">Avançar</button>
       </div>
     </form>
   </div>
@@ -41,35 +53,47 @@
 
 <!-- CONFIRMAR CÓDIGO -->
 
-<div class="d-flex align-items-center justify-content-center vh-100">
-  <div *ngIf="showVerification" class="container">
-    <form>
+<div class="d-flex align-items-center justify-content-center flex-grow-1">
+  <div *ngIf="showVerification" class="container" style="margin: 10px;">
+    <h4 style="font-weight: 500; padding: 20px;" class="text-center">Digite o código de 6 dígitos</h4>
+    <form class="mt-4 custom-form">
       <div class="form-group">
-        <label>Digite o código de 6 dígitos</label>
-        <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}" class="form-control" id="codigoVerificacao" placeholder="Digite o código">
+        <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm"
+        style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC"  id="codigoVerificacao" placeholder="Digite o código">
       </div>
-      <button type="submit" class="btn btn-primary mt-4" (click)="verificarCodigo()">Enviar</button>
-      <button class="btn btn-secondary mt-4" (click)="voltar()">Voltar</button>
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <span style="font-size: 10px; color: #8f8f8f; padding: 20px;">*Código enviado na sua caixa de E-mail</span>
+        <button type="submit" class="btn btn-primary mt-4" style="padding:6px 25px;background-color: #1F9BC1; border: none;" (click)="verificarCodigo()">Verificar</button>
+        <button class="btn btn-primary mt-2" style="padding:6px 16px;background-color: #8f8f8f; border: none;" (click)="voltar()">Voltar</button>
+      </div>      
     </form>
   </div>
 </div>
 
-<!-- CONFIRMAR CÓDIGO -->
+<!-- VERIFICADO COM SUCESSO -->
 
-<div *ngIf="showSuccess">
-  <h2>Usuário verificado com sucesso</h2><br>
+<div *ngIf="showSuccess" class="d-flex align-items-center justify-content-center flex-grow-1">
+  <h3 style="font-weight: 500;">Usuário verificado com sucesso</h3><br>
   <img src="caminho_da_imagem">
 </div>
 
-<div *ngIf="showUpload">
-  <h3>Upload de imagem</h3>
-  <h6>Selecione uma foto para o seu perfil</h6>
-  <img src="../../assets/emptyUser.png"><br>
-  <button type="button" class="btn btn-primary mt-4">Carregar Foto</button>
-  <button type="button" class="btn btn-success mt-4" (click)="finalizarCadastro()">Cadastrar</button>
+<!-- SALVAR IMAGEM -->
+
+<div *ngIf="showUpload" class="d-flex flex-column align-items-center justify-content-center flex-grow-1">
+  <h4 style="font-weight: 500;">Upload de imagem</h4>
+  <h4 style="font-size: 15px; font-weight: 500;">Selecione uma foto para o seu perfil</h4>
+  <img style="padding: 30px 0 0 0;" src="../../assets/emptyUser.png" alt="Imagem vazia do usuário"><br>
+  <button type="button" class="btn btn-primary mt-4" style="padding:6px 25px;background-color: #1F9BC1; border: none;">Carregar Foto</button>
+  <button type="button" class="btn btn-primary mt-2" style="padding:6px 16px;background-color: #35C832; border: none;" (click)="finalizarCadastro()">Cadastrar</button>
 </div>
 
-<div *ngIf="showSuccessMessage">
+<!-- CADASTRO REALIZADO COM SUCESSO -->
+
+<div *ngIf="showSuccessMessage" class="d-flex align-items-center justify-content-center flex-grow-1">
   <h2>Cadastro realizado com sucesso</h2>
   <button type="button" class="btn btn-primary mt-4" routerLink="/signin">Ir para o login</button>
+</div>
+
+<!-- FIM -->
+
 </div>
