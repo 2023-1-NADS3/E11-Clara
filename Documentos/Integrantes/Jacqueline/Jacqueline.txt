@@ -2,4 +2,5 @@
 Elaboração de perguntas para pesquisa junto da Beatriz e Gustavo.
 Entrevista com 4 pessoas com perfil para potêncial usuário do aplicativo a ser desenvolvido.
 Compilação e compartilhamento das informações das pesquisas com o grupo para futura discução da persona final do projeto.
+ 
 
