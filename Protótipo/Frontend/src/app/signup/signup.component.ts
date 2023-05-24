@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupComponent {
   emailParaCodigo: string = '';
-  nome: string = '';
-  data: string = '';
+  name: string = '';
+  date: string = '';
   email: string = '';
   senha: string = '';
   confirmSenha: string = '';
@@ -37,8 +37,8 @@ export class SignupComponent {
 
     const codigo = this.gerarCodigo();
     const bodyData = {
-      "name": this.nome,
-      "date": this.data,
+      "name": this.name,
+      "date": this.date,
       "email": this.email,
       "senha": this.senha,
       "code": codigo,
@@ -55,8 +55,8 @@ export class SignupComponent {
         this.showVerification = true;
         this.registrationSent = true;
 
-        this.nome = '';
-        this.data = '';
+        this.name = '';
+        this.date = '';
         this.email = '';
         this.senha = '';
         this.confirmSenha = '';

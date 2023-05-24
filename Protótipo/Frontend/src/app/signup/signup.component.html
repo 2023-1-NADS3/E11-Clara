@@ -2,43 +2,38 @@
 <!-- CADASTRO -->
 
 <div class="d-flex align-items-center justify-content-center vh-100">
-  <div *ngIf="showRegistration">
-    <h4 class="text-center">Olá,</h4>
-    <h4 class="text-center">vamos criar sua conta</h4>
-    <form>
-      <div class="form-group py-2" style="width: 20em;">
-        <label style="font-size: 14px;font-weight: 600; padding: 2px;">Nome completo*</label>
-        <input type="text" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" style = "border: #CCCCCC 1px solid; border-radius: 2px;" class="form-control" id="nome"
-           required>
+  <div *ngIf="showRegistration" class="container" style="margin: 10px;">
+    <h4 style="font-weight: 500;" class="text-center">Olá,</h4>
+    <h4 style="font-weight: 500;" class="text-center">vamos criar sua conta</h4>
+    <form class="mt-4 custom-form">
+      <div class="form-group py-2">
+        <label style="font-size: 14px; font-weight: 600; padding: 2px;">Nome completo*</label>
+        <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="nome" required>
       </div>
 
       <div class="form-group py-2">
-        <label style="font-size: 14px;font-weight: 600; padding: 2px;">Data de nascimento*</label>
-        <input type="date" [(ngModel)]="data" [ngModelOptions]="{standalone: true}" style = "border: #CCCCCC 1px solid; border-radius: 2px;" class="form-control" id="data"
-          required>
+        <label style="font-size: 14px; font-weight: 600; padding: 2px;">Data de nascimento*</label>
+        <input type="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="data" required>
       </div>
 
       <div class="form-group py-2">
-        <label style="font-size: 14px;font-weight: 600; padding: 2px;">E-mail*</label>
-        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" style = "border: #CCCCCC 1px solid; border-radius: 2px;" class="form-control" id="email"
-         required>
+        <label style="font-size: 14px; font-weight: 600; padding: 2px;">E-mail*</label>
+        <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="email" required>
       </div>
 
       <div class="form-group py-2">
-        <label style="font-size: 14px;font-weight: 600; padding: 2px;">Senha*</label>
-        <input type="password" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}"  style = "border: #CCCCCC 1px solid; border-radius: 2px;"class="form-control" id="senha"
-         required>
+        <label style="font-size: 14px; font-weight: 600; padding: 2px;">Senha*</label>
+        <input type="password" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="senha" required>
       </div>
 
       <div class="form-group py-2">
-        <label style="font-size: 14px;font-weight: 600; padding: 2px;">Confirme sua senha*</label>
-        <input type="password" [(ngModel)]="confirmSenha" [ngModelOptions]="{standalone: true}" style = "border: #CCCCCC 1px solid; border-radius: 2px;" class="form-control"
-          id="confirmSenha" required>
-        <span *ngIf="senha !== confirmSenha" style="color: red;">X Senhas não batem</span>
+        <label style="font-size: 14px; font-weight: 600; padding: 2px;">Confirme sua senha*</label>
+        <input type="password" [(ngModel)]="confirmSenha" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg form-control-sm" style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="confirmSenha" required>
+        <span *ngIf="senha !== confirmSenha" style="color: red; font-size: 14px;">X Senhas não batem</span>
       </div>
 
       <div class="text-center">
-        <button type="submit" class="btn btn-primary mt-4" (click)="cadastrar()" style="border: none;color: white; padding: 6px 12px; background-color: #1F9BC1;">Avançar</button>
+        <button type="submit" class="btn btn-primary mt-4" style="background-color: #1F9BC1; border: none;" (click)="cadastrar()">Avançar</button>
       </div>
     </form>
   </div>
@@ -46,18 +41,20 @@
 
 <!-- CONFIRMAR CÓDIGO -->
 
-<div *ngIf="showVerification">
-  <form>
-    <div class="form-group">
-      <label>Digite o código de 6 dígitos</label>
-      <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}" class="form-control"
-        id="codigoVerificacao" placeholder="Digite o código">
-    </div>
-
-    <button type="submit" class="btn btn-primary mt-4" (click)="verificarCodigo()">Enviar</button>
-    <button class="btn btn-secondary mt-4" (click)="voltar()">Voltar</button>
-  </form>
+<div class="d-flex align-items-center justify-content-center vh-100">
+  <div *ngIf="showVerification" class="container">
+    <form>
+      <div class="form-group">
+        <label>Digite o código de 6 dígitos</label>
+        <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}" class="form-control" id="codigoVerificacao" placeholder="Digite o código">
+      </div>
+      <button type="submit" class="btn btn-primary mt-4" (click)="verificarCodigo()">Enviar</button>
+      <button class="btn btn-secondary mt-4" (click)="voltar()">Voltar</button>
+    </form>
+  </div>
 </div>
+
+<!-- CONFIRMAR CÓDIGO -->
 
 <div *ngIf="showSuccess">
   <h2>Usuário verificado com sucesso</h2><br>
