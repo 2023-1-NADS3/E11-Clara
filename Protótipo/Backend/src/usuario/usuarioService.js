@@ -73,7 +73,7 @@ module.exports.loginuserDBService = (SigninData) => {
                     return bcrypt.compare(SigninData.senha, result.senha)
                         .then((isMatch) => {
                             if (isMatch) {
-                                resolve({ status: true, msg: "Student Validated Successfully" });
+                                resolve({ status: true, msg: "Student Validated Successfully", _id: result._id});
                             } else {
                                 reject({ status: false, msg: "Student Validation Failed" });
                             }

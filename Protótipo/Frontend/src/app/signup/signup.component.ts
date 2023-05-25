@@ -16,9 +16,17 @@ export class SignupComponent {
   codigoVerificacao: string = '';
   registrationSent: boolean = false;
   codigoInvalido: boolean = false;
-  showBallLarge: boolean = false;
 
   constructor(private http: HttpClient) { }
+
+  get codigoVerificacaoDigits() {
+    return this.codigoVerificacao.split('').slice(0, 6);
+  }
+
+  onCodeInput(event: any) {
+    const input = event.target as HTMLInputElement;
+    this.codigoVerificacao = input.value;
+  }
 
   private gerarCodigo(): string {
     const min = 100000;
@@ -77,13 +85,16 @@ export class SignupComponent {
 
       if (message === "Verificação realizada com sucesso") {
         const element = document.getElementById('verificarSucesso');
-        this.showBallLarge = true;
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const BackgroundElement = document.getElementById('background') as HTMLElement;
+          BackgroundElement.style.background = '#5fcf5d';
         }
         setTimeout(() => {
           const element = document.getElementById('salvarImagem');
           if (element) {
+            const BackgroundElement = document.getElementById('background') as HTMLElement;
+            BackgroundElement.style.background = '#E5E5E5';
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         }, 4000);
@@ -100,6 +111,8 @@ export class SignupComponent {
 
   finalizarCadastro() {
     const element = document.getElementById('cadastrarRealizado');
+    const BackgroundElement = document.getElementById('background') as HTMLElement;
+    BackgroundElement.style.background = '#4AB3D3';
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }

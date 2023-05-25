@@ -55,9 +55,10 @@
 
         <div class="text-center">
           <button type="submit" class="btn btn-primary mt-4"
-            style="padding:6px 25px;background-color: #1F9BC1; border: none;" (click)="cadastrar()">Avançar</button>
+            style="padding:6px 30px;background-color: #1F9BC1; border: none;" (click)="cadastrar()">Avançar</button>
         </div>
       </form>
+      <a routerLink="/signin" class="my-4 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Já tenho uma conta</a>
     </div>
   </div>
 
@@ -72,22 +73,25 @@
         <div class="form-group position-relative">
           <div style="position: relative;">
             <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}"
-              class="form-control form-control-lg form-control-sm"
-              style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="codigoVerificacao"
-              placeholder="Digite o código">
-            <h2 *ngIf="codigoInvalido"
-              style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background-color: transparent; color: red; font-size: 25px; cursor: pointer;">
-              X</h2>
+            class="form-control form-control-lg form-control-sm unselectable no-outline"
+            style="font-size: 14px; color: transparent; background-color: transparent; border: none; position: absolute; z-index: 1;"
+            id="codigoVerificacao" (input)="onCodeInput($event)" maxlength="6">          
+            <div class="codigo-quadrados">
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[0] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[1] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[2] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[3] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[4] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[5] }}</div>
+            </div>
           </div>
-          <span *ngIf="codigoInvalido" style="color: red; font-size: 14px; text-align: right; display: block;">Código
-            inválido</span>
         </div>
         <div class="d-flex flex-column align-items-center">
-          <span style="font-size: 10px; color: #8f8f8f; padding: 20px;">*Código enviado na sua caixa de E-mail</span>
+          <span style="font-size: 12px; color: #8f8f8f; padding: 20px;">*Código enviado na sua caixa de E-mail</span>
           <button type="submit" class="btn btn-primary mt-4"
             style="padding: 6px 25px; background-color: #1F9BC1; border: none;"
             (click)="verificarCodigo()">Verificar</button>
-          <button class="btn btn-primary mt-2" style="padding: 6px 16px; background-color: #8f8f8f; border: none;"
+          <button class="btn btn-primary mt-2" style="padding: 6px 16px; background-color: #8f8f8f; border: none"
             (click)="voltar()">Voltar</button>
         </div>
       </form>
@@ -96,16 +100,15 @@
 
   <!-- VERIFICADO COM SUCESSO -->
 
-  <section class="d-flex flex-column align-items-center justify-content-center vh-100" id="verificarSucesso">
-    <div class="ball"></div>
-    <h4 style="font-weight: 500;">Usuário verificado com sucesso</h4><br>
-    <img src="caminho_da_imagem">
-  </section>
-  
+  <div class="d-flex flex-column align-items-center justify-content-center vh-100" id="verificarSucesso">
+    <h4 style="font-weight: 500; color: #FFFFFF;">Usuário verificado com sucesso</h4>
+    <h4 style="font-weight: 500; color: #FFFFFF;">com sucesso</h4>
+  </div>
+
 
   <!-- SALVAR IMAGEM -->
 
-  <div class="d-flex flex-column align-items-center justify-content-center vh-100"id="salvarImagem">
+  <div class="d-flex flex-column align-items-center justify-content-center vh-100" id="salvarImagem">
     <h4 style="font-weight: 500;">Upload de imagem</h4>
     <h4 style="font-size: 15px; font-weight: 500;">Selecione uma foto para o seu perfil</h4>
     <img style="padding: 30px 0 0 0;" src="../../assets/emptyUser.png" alt="Imagem vazia do usuário"><br>

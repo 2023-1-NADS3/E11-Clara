@@ -1,5 +1,6 @@
-section{
+section {
   background-color: #E5E5E5;
+  transition: all 1s ease;
 }
 
 .custom-form {
@@ -7,3 +8,31 @@ section{
   margin: 0 auto;
 }
 
+.codigo-quadrados {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  position: relative;
+  top: -10px;
+  z-index: 0;
+}
+
+.codigo-quadrado {
+  width: calc(16.666% - 7px);
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+.no-outline {
+  outline: none !important;
+}

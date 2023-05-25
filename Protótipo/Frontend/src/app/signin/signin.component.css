@@ -1,0 +1,9 @@
+section {
+    background-color: #E5E5E5;
+    transition: all 1s ease;
+  }
+  
+  .custom-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }

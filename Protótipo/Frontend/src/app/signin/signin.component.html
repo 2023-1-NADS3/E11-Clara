@@ -1,25 +1,39 @@
-<div class="container">
-  <div class="row">
-      <h2>Login</h2>
-      <hr/>
-  </div>
-    <div class="row">
-         <div class="col-sm-6">
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="stname" placeholder="Enter Email"/>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" class="form-control" id="stname" placeholder="Enter Password"/>
-                </div>
-              <br>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-                </div>
-    
-              </form>
-         </div>
+<section id="background">
+
+  <!-- Login -->
+
+  <div class="d-flex align-items-center justify-content-center vh-100" id="cadastrar">
+    <div class="container" style="margin: 10px;">
+      <h4 style="font-weight: 500; padding: 40px 0;" class="text-center mb-4">Olá, de novo</h4>
+      <form class="mt-4 custom-form">
+  
+        <div class="form-group py-2">
+          <label style="font-size: 14px; font-weight: 600; padding: 2px;">E-mail*</label>
+          <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"
+            class="form-control form-control-lg form-control-sm"
+            style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="email" placeholder="E-mail"
+            required>
+        </div>
+  
+        <div class="form-group py-2">
+          <label style="font-size: 14px; font-weight: 600; padding: 2px;">Senha*</label>
+          <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"
+            class="form-control form-control-lg form-control-sm"
+            style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="senha" placeholder="Senha"
+            required>
+        </div>
+  
+        <div class="text-center mt-4" style="padding: 40px;">
+          <button type="submit" class="btn btn-primary"
+            style="padding: 6px 40px; background-color: #1F9BC1; border: none;" (click)="login()">Entrar</button>
+        </div>
+  
+      </form>
+      <a routerLink="" class="my-3 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Esqueci minha senha</a>
+      <a routerLink="/signup" class="my-3 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Não tenho uma conta</a>
     </div>
-</div>
+  </div>
+
+  <!-- FIM -->
+
+</section>

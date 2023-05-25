@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { json } from 'express';
 
 @Component({
   selector: 'app-signin',
@@ -23,10 +24,13 @@ export class SigninComponent {
       email: this.email,
       senha: this.password,
     };
+
     this.http.post("http://localhost:8086/Usuario/Signin", bodyData).subscribe((resultData: any) => {
       if (resultData.status) {
         alert("Logged in");
+        localStorage.setItem("_id", JSON.parse(resultData)._id);
       } else {
+
         alert("Incorrect Email or Password");
         console.log("Error login");
       }

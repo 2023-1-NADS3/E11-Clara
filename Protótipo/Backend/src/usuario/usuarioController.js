@@ -32,7 +32,7 @@ var SigninUserControllerFn = async (req, res) => {
     try {
         result = await usuarioService.loginuserDBService(req.body);
         if (result.status) {
-            res.send({ "status": true, "message": result.msg });
+            res.send({ "status": true, "message": result.msg, "_id": result._id });
         } else {
             res.send({ "status": false, "message": result.msg });
         }
