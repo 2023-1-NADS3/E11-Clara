@@ -14,12 +14,9 @@ export class SignupComponent {
   senha: string = '';
   confirmSenha: string = '';
   codigoVerificacao: string = '';
-  showRegistration: boolean = true;
-  showVerification: boolean = false;
   registrationSent: boolean = false;
-  showSuccess: boolean = false;
-  showUpload: boolean = false;
-  showSuccessMessage: boolean = false;
+  codigoInvalido: boolean = false;
+  showBallLarge: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -51,10 +48,6 @@ export class SignupComponent {
       if (message === "Usuario não verificado criado") {
         this.emailParaCodigo = this.email;
 
-        this.showRegistration = false;
-        this.showVerification = true;
-        this.registrationSent = true;
-
         this.name = '';
         this.date = '';
         this.email = '';
@@ -62,6 +55,11 @@ export class SignupComponent {
         this.confirmSenha = '';
 
         this.codigoVerificacao = '';
+
+        const element = document.getElementById('confirmarCodigo');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       }
     });
   }
@@ -73,31 +71,37 @@ export class SignupComponent {
     };
 
     this.http.post("http://localhost:8086/Usuario/Verify", bodyData, { responseType: 'text' }).subscribe((resultData: any) => {
+
       const resultObj = JSON.parse(resultData);
       const message = resultObj.message;
+
       if (message === "Verificação realizada com sucesso") {
-        this.showVerification = false;
-        this.showSuccess = true;
+        const element = document.getElementById('verificarSucesso');
+        this.showBallLarge = true;
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         setTimeout(() => {
-          this.showSuccess = false;
-          this.showUpload = true;
-        }, 2000);
-      } else {
-        const errorMessage = "X verificação: " + message;
-        // Exibir a mensagem de erro na tela
+          const element = document.getElementById('salvarImagem');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 4000);
       }
     });
   }
 
   voltar() {
-    this.showRegistration = true;
-    this.showVerification = false;
-    this.registrationSent = false;
+    const element = document.getElementById('cadastrar');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 
   finalizarCadastro() {
-    // Lógica para finalizar o cadastro e exibir a tela de sucesso
-    this.showUpload = false;
-    this.showSuccessMessage = true;
+    const element = document.getElementById('cadastrarRealizado');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
 }
