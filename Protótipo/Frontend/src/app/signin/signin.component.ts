@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { json } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -8,13 +8,14 @@ import { json } from 'express';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
+
   email: string = '';
   password: string = '';
 
-  isLogin: boolean = true;
+  errorLogin: boolean = false;
   erroMessage: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient) { }
 
   login() {
     console.log(this.email);
@@ -25,15 +26,20 @@ export class SigninComponent {
       senha: this.password,
     };
 
-    this.http.post("http://localhost:8086/Usuario/Signin", bodyData).subscribe((resultData: any) => {
-      if (resultData.status) {
-        alert("Logged in");
-        localStorage.setItem("_id", JSON.parse(resultData)._id);
-      } else {
-
-        alert("Incorrect Email or Password");
-        console.log("Error login");
+    this.http.post("http://localhost:8086/Usuario/Signin", bodyData).subscribe(
+      (resultData: any) => {
+        if (resultData.status) {
+          this.errorLogin = false;
+          localStorage.setItem("_id", resultData._id); 
+          this.router.navigate(['/home']);
+        } else {
+          this.errorLogin = true;
+        }
+      },
+      (error) => {
+        console.log("Error:", error);
       }
-    });
+    );
   }
+
 }

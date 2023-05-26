@@ -58,7 +58,8 @@
             style="padding:6px 30px;background-color: #1F9BC1; border: none;" (click)="cadastrar()">Avançar</button>
         </div>
       </form>
-      <a routerLink="/signin" class="my-4 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Já tenho uma conta</a>
+      <a routerLink="/signin" class="my-4 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Já tenho uma
+        conta</a>
     </div>
   </div>
 
@@ -73,9 +74,9 @@
         <div class="form-group position-relative">
           <div style="position: relative;">
             <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}"
-            class="form-control form-control-lg form-control-sm unselectable no-outline"
-            style="font-size: 14px; color: transparent; background-color: transparent; border: none; position: absolute; z-index: 1;"
-            id="codigoVerificacao" (input)="onCodeInput($event)" maxlength="6">          
+              class="form-control form-control-lg form-control-sm unselectable no-outline"
+              style="font-size: 14px; color: transparent; background-color: transparent; border: none; position: absolute; z-index: 1;"
+              id="codigoVerificacao" (input)="onCodeInput($event)" maxlength="6">
             <div class="codigo-quadrados">
               <div class="codigo-quadrado">{{ codigoVerificacaoDigits[0] }}</div>
               <div class="codigo-quadrado">{{ codigoVerificacaoDigits[1] }}</div>
