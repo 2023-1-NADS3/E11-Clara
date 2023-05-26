@@ -1,8 +1,17 @@
+<!-- <SECTION> DE LOADING-->
+
+  <section class="fullscreen-section d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+        <img src="../../assets/loadingLogo.png" alt="Imagem" class="img-fluid">
+        <p class="mt-3">Saúde integrada a um toque.</p>
+    </div>
+</section>
+
 <section id="background">
 
   <!-- Login -->
 
-  <div class="d-flex align-items-center justify-content-center vh-100" id="cadastrar">
+  <div class="d-flex align-items-center justify-content-center vh-100" id="logar">
     <div class="container" style="margin: 10px;">
       <h4 style="font-weight: 500; padding: 30px 0;" class="text-center mb-4">Olá, de novo</h4>
       <form class="mt-4 custom-form">
@@ -32,7 +41,7 @@
   
       </form>
       <a routerLink="" class="my-3 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Esqueci minha senha</a>
-      <a routerLink="/signup" class="my-3 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Não tenho uma conta</a>
+      <a (click)="mudarParaCadastrp()" class="my-3 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Não tenho uma conta</a>
     </div>
   </div>
 

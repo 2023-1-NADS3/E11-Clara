@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +18,7 @@ export class SignupComponent {
   registrationSent: boolean = false;
   codigoInvalido: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   get codigoVerificacaoDigits() {
     return this.codigoVerificacao.split('').slice(0, 6);
@@ -97,7 +98,7 @@ export class SignupComponent {
             BackgroundElement.style.background = '#E5E5E5';
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
-        }, 4000);
+        }, 2000);
       }
     });
   }
@@ -117,4 +118,25 @@ export class SignupComponent {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
+
+  irParaLogin() {
+    const cadastrarRealizado = document.getElementById('cadastrarRealizado') as HTMLElement;
+    cadastrarRealizado.style.opacity = '0';
+    setTimeout(() => {
+      this.router.navigate(['/signin']);
+    }, 1000);
+  }
+
+  mudarParaLogin() {
+    const cadastrar = document.getElementById('cadastrar') as HTMLElement;
+    cadastrar.style.opacity = '0';
+    setTimeout(() => {
+      const BackgroundElement = document.getElementById('background') as HTMLElement;
+      BackgroundElement.style.background = '#4AB3D3';
+    }, 500);
+    setTimeout(() => {
+      this.router.navigate(['/signin']);
+    }, 1200);
+  }
+
 }

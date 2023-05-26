@@ -17,6 +17,18 @@ export class SigninComponent {
 
   constructor(private router: Router, private http: HttpClient) { }
 
+  mudarParaCadastrp() {
+    const logar = document.getElementById('logar') as HTMLElement;
+    logar.style.opacity = '0';
+    setTimeout(() => {
+      const BackgroundElement = document.getElementById('background') as HTMLElement;
+      BackgroundElement.style.background = '#4AB3D3';
+    }, 500);
+    setTimeout(() => {
+      this.router.navigate(['/signup']);
+    }, 1200);
+  }
+
   login() {
     console.log(this.email);
     console.log(this.password);
@@ -30,8 +42,16 @@ export class SigninComponent {
       (resultData: any) => {
         if (resultData.status) {
           this.errorLogin = false;
-          localStorage.setItem("_id", resultData._id); 
-          this.router.navigate(['/home']);
+          localStorage.setItem("_id", resultData._id);
+          const logar = document.getElementById('logar') as HTMLElement;
+          logar.style.opacity = '0';
+          setTimeout(() => {
+            const BackgroundElement = document.getElementById('background') as HTMLElement;
+            BackgroundElement.style.background = '#4AB3D3';
+          }, 500);
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          }, 1200);
         } else {
           this.errorLogin = true;
         }

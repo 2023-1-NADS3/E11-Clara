@@ -1,22 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    this.showStoredId();
-  }
-
-  showStoredId(): void {
-    const storedId = localStorage.getItem("_id"); 
-    setTimeout(() => {
-    alert(storedId);
-  }, 4000);
+  Deslogar() {
+    localStorage.removeItem('_id');
+    this.router.navigate(['/signin']);
   }
 }
