@@ -1,0 +1,4 @@
+Integrante:  Beatriz Cândido Portela	RA: 22023095
+
+Ativiades desenvolvidas
+Finalização do documento de UX com a equipe, realização dos testes de componente com utilização do framework Jest, criação de suíte e cenários de teste para o sistema de Cadastro por meio do QASE, desenvolvimento do documento de Atributos de Qualidade do projeto, atualização do repositório do GitHub com as novas documentações e códigos de teste.
