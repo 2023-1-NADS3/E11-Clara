@@ -1,0 +1,4 @@
+Integrante:  Beatriz Cândido Portela	RA: 22023095
+
+Ativiades desenvolvidas
+Preenchimento do formulário da avaliação 360, envio do documento de UX para o repositório, realização dos testes manuais no QASE, implantação da aplicação em nuvem (Firebase Hosting), realização dos testes finais, realização de melhorias na apresentação do projeto.
