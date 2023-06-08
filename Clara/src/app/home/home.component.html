@@ -1,0 +1,57 @@
+<!-- <SECTION> DE LOADING-->
+
+<section class="fullscreen-section d-flex align-items-center justify-content-center">
+    <div class="container text-center">
+        <img src="../../assets/loadingLogo.png" alt="Imagem" class="img-fluid">
+        <p class="mt-3">Saúde integrada a um toque.</p>
+    </div>
+</section>
+
+<section id="background">
+
+    <!-- HOME -->
+
+    <!-- HEADER -->
+
+    <nav class="bg-blue">
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+          <img class="image" [src]="toggleImage ? '../../assets/downButton.png' : '../../upButton.png'" alt=""
+            [ngClass]="toggleImage ? 'downButtonClass' : 'upButtonClass'">
+        </button>
+      </nav>
+
+      <div class="collapse navbar-collapse justify-content-end" [ngClass]="{ 'show': isNavbarOpen }" id="navbarMobile">
+        <ul class="navbar-nav navbarmenu">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Criar horário</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Salvar aferições</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Configurações</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sair</a>
+          </li>
+        </ul>
+      </div>
+
+    <!-- <button (click)="Deslogar()">sair</button> -->
+
+    <!-- PÁGINA PRINCIPAL -->
+
+    <div class="d-flex align-items-center justify-content-center vh-100" id="home">
+
+        <div class="d-flex align-items-start" style="position: absolute; top: 50px; left: 10px;">
+            <img src="../../assets/emptyUser.png" class="mr-3" width="32px" height="32px" style="border: 1px solid #57B8D6; border-radius: 100%;">
+            <div class="p-2">
+                <p style="font-size: 14px;">Olá, usuario.</p>
+            </div>
+        </div>
+
+    </div>    
+
+    <!-- FIM -->
+
+</section>

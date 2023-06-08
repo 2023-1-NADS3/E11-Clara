@@ -1,0 +1,144 @@
+<!-- <SECTION> DE LOADING-->
+
+<section class="fullscreen-section d-flex align-items-center justify-content-center">
+  <div class="container text-center">
+    <img src="../../assets/loadingLogo.png" alt="Imagem" class="img-fluid">
+    <p class="mt-3">Saúde integrada a um toque.</p>
+  </div>
+</section>
+
+<section id="background">
+
+  <!-- CADASTRO -->
+
+  <div class="d-flex align-items-center justify-content-center vh-100" id="cadastrar">
+    <div class="container" style="margin: 10px;">
+      <h4 style="font-weight: 500;" class="text-center">Olá,</h4>
+      <h4 style="font-weight: 500;" class="text-center">vamos criar sua conta</h4>
+      <form class="mt-4 custom-form">
+        <div class="form-group py-2">
+          <label style="font-size: 14px; font-weight: 600; padding: 2px;">Nome completo*</label>
+          <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}"
+            class="form-control form-control-lg form-control-sm"
+            style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="nome" placeholder="Nome completo"
+            required>
+        </div>
+
+        <div class="form-group py-2">
+          <label style="font-size: 14px; font-weight: 600; padding: 2px;">Data de nascimento*</label>
+          <input type="date" [(ngModel)]="date" [ngModelOptions]="{standalone: true}"
+            class="form-control form-control-lg form-control-sm"
+            style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="data" required>
+        </div>
+
+        <div class="form-group py-2">
+          <label style="font-size: 14px; font-weight: 600; padding: 2px;">E-mail*</label>
+          <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"
+            class="form-control form-control-lg form-control-sm"
+            style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="email" placeholder="E-mail"
+            required>
+        </div>
+
+        <div class="form-group py-2">
+          <label style="font-size: 14px; font-weight: 600; padding: 2px;">Senha*</label>
+          <input type="password" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}"
+            class="form-control form-control-lg form-control-sm"
+            style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="senha" placeholder="Senha"
+            required>
+        </div>
+
+        <div class="form-group py-2">
+          <label style="font-size: 14px; font-weight: 600; padding: 5px;">Confirme sua senha*</label>
+          <div class="position-relative">
+            <input type="password" [(ngModel)]="confirmSenha" [ngModelOptions]="{standalone: true}"
+              class="form-control form-control-lg form-control-sm"
+              style="font-size: 14px; border-radius: 2px; border: 1px solid #CCCCCC" id="confirmSenha"
+              placeholder="Confirmar senha" required>
+            <h2 *ngIf="senha !== confirmSenha"
+              style="background-color: transparent;color: red; font-size: 25px; position: absolute; top: 35%; right: 10px; transform: translateY(-50%);">
+              x</h2>
+            <span *ngIf="senha !== confirmSenha"
+              style="color: red; font-size: 14px; text-align: right; display: block;">Senhas não batem</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary mt-4"
+            style="padding:6px 30px;background-color: #1F9BC1; border: none;" (click)="cadastrar()">Avançar</button>
+        </div>
+      </form>
+      <a (click)="mudarParaLogin()" class="my-4 d-block text-center" style="font-size: 15px; color: #4AB3D3;">Já tenho uma
+        conta</a>
+    </div>
+  </div>
+
+  <!-- CONFIRMAR CÓDIGO -->
+
+  <div class="d-flex align-items-center justify-content-center vh-100" id="confirmarCodigo">
+    <div class="container d-flex flex-column justify-content-between" style="margin: 10px;">
+      <div class="text-center">
+        <h4 style="font-weight: 500">Digite o código de 6 dígitos</h4>
+      </div>
+      <form class="mt-4 custom-form">
+        <div class="form-group position-relative">
+          <div style="position: relative;">
+            <input type="text" [(ngModel)]="codigoVerificacao" [ngModelOptions]="{standalone: true}"
+              class="form-control form-control-lg form-control-sm unselectable no-outline"
+              style="font-size: 14px; color: transparent; background-color: transparent; border: none; position: absolute; z-index: 1;"
+              id="codigoVerificacao" (input)="onCodeInput($event)" maxlength="6">
+            <div class="codigo-quadrados">
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[0] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[1] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[2] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[3] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[4] }}</div>
+              <div class="codigo-quadrado">{{ codigoVerificacaoDigits[5] }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column align-items-center">
+          <span style="font-size: 12px; color: #8f8f8f; padding: 20px;">*Código enviado na sua caixa de E-mail</span>
+          <button type="submit" class="btn btn-primary mt-4"
+            style="padding: 6px 25px; background-color: #1F9BC1; border: none;"
+            (click)="verificarCodigo()">Verificar</button>
+          <button class="btn btn-primary mt-2" style="padding: 6px 16px; background-color: #8f8f8f; border: none"
+            (click)="voltar()">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- VERIFICADO COM SUCESSO -->
+
+  <div class="d-flex flex-column align-items-center justify-content-center vh-100" id="verificarSucesso">
+    <h4 style="font-weight: 500; color: #FFFFFF;">Usuário verificado com sucesso</h4>
+    <h4 style="font-weight: 500; color: #FFFFFF;">com sucesso</h4>
+  </div>
+
+
+  <!-- SALVAR IMAGEM -->
+
+  <div class="d-flex flex-column align-items-center justify-content-center vh-100" id="salvarImagem">
+    <h4 style="font-weight: 500;">Upload de imagem</h4>
+    <h4 style="font-size: 15px; font-weight: 500;">Selecione uma foto para o seu perfil</h4>
+    <img style="padding: 30px 0 0 0;" src="../../assets/emptyUser.png" alt="Imagem vazia do usuário"><br>
+    <button type="button" class="btn btn-primary mt-4"
+      style="padding:6px 25px;background-color: #1F9BC1; border: none;">Carregar Foto</button>
+    <button type="button" class="btn btn-primary mt-2" style="padding:6px 16px;background-color: #35C832; border: none;"
+      (click)="finalizarCadastro()">Cadastrar</button>
+  </div>
+
+  <!-- CADASTRO REALIZADO COM SUCESSO -->
+
+  <div class="d-flex flex-column align-items-center justify-content-center vh-100" id="cadastrarRealizado">
+    <img src="../../assets/check-circle.png" style="padding: 0 0 20px 0">
+    <h4 style="font-weight: 500; color: white;" class="text-center">Cadastro realizado</h4>
+    <h4 style="font-weight: 500; color: white;" class="text-center">com sucesso.</h4>
+    <button type="button" class="btn btn-primary mt-4"
+      style="padding:6px 30px;background-color: #FFFFFF;color: #4AB3D3; border: none;" (click)="irParaLogin()">Ir para o
+      login</button>
+  </div>
+
+  <!-- FIM -->
+
+</section>
