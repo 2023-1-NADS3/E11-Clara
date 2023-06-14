@@ -5,7 +5,7 @@
 ## Clara App - Saúde integrada a um toque.
 ## E-11
 
-### Integrantes: [Beatriz Portela](https://www.github.com/beaodara), [Gustavo Bermudes](https://www.github.com/GustavoBermudes), [Jacqueline Nakirimoto](https://www.github.com/), [Julya Joplin](https://www.github.com/julyajoplin).
+### Integrantes: [Beatriz Portela](https://www.github.com/beaodara), [Gustavo Bermudes](https://www.github.com/GustavoBermudes), [Jacqueline Nakirimoto](https://www.github.com/nakirimoto), [Julya Joplin](https://www.github.com/julyajoplin).
 
 
 ### Professores Orientadores: Adriano Valente, Aimar Lopes, Francisco Escobar, Jefferson Silva, Victor Rosetti.
