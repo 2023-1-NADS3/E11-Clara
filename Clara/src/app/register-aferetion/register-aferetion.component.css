@@ -1,0 +1,106 @@
+h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 150px;
+    padding-left: 20px;
+}
+
+.container {
+    padding-top: 50px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.CadastrarAfericoes {
+    font-size: 18px;
+    margin: 0;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label-esquerda {
+    text-align: left;
+    padding-left: 20px;
+    display: block;
+}
+
+.input-afericao {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    height: 30px;
+    border: 1px solid #cccccc;
+}
+
+.ladoAlado {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-size: 16px;
+}
+
+.AfericoesValor{
+    margin: 0 10px 0 0;
+    width: 300px;
+}
+
+.input-text {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    margin: 3px;
+    border: 1px solid #cccccc;
+}
+
+.botoesCancelarCadastrar {
+    margin-top: 20px;
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botaoCancelar {
+    background-color: #bae5f3;
+    padding: 2px 2px;
+    color: #1f9bc1;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 169px;
+    margin: 0 5px;
+}
+
+.botaoCadastrar {
+    background-color: #1f9bc1;
+    padding: 5px 2px;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 169px;
+    margin: 0 5px;
+}
+
+input {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    height: 32px;
+}
+
+select { 
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    height: 32px;
+}

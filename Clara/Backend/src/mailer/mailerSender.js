@@ -51,7 +51,6 @@ async function main(to, code) {
       </head>
       <body>
         <div class="container">
-          <img class="image" src="https://www.imagemhost.com.br/images/2023/05/16/mailerVerification.png" widht=40 height=100 alt="Imagem">
           <h1 class="title">Confirmação de email</h1>
           <h4>código de 6 dígitos</h4>
           <div class="code">`+code+`</div>

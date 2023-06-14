@@ -12,6 +12,18 @@ var SignupUserControllerFn = async (req, res) => {
         console.log(err);
     }
 }
+ 
+var getDataControllerFn = async (req, res) => {
+    console.log(req.params.id);
+    var result = await usuarioService.getDataFromDBService(req.params.id);
+ 
+     if (result) {
+        res.send(result);
+     } else {
+         res.send({ "status": false, "message": "User Updateeeedddddd Faileddddddd" });
+     }
+  };
+
 
 var VerifyUserControllerFn = async (req, res) => {
     try {
@@ -42,5 +54,18 @@ var SigninUserControllerFn = async (req, res) => {
     }
 };
 
-module.exports = { SigninUserControllerFn, SignupUserControllerFn, VerifyUserControllerFn };
+var AferitionrControllerFn = async (req, res) => {
+    try {
+        var status = await usuarioService.AferitionpostDBService(req.body, req.params.id);
+        if (status.status === false) {
+            res.send({ "status": false, "message": status.msg });
+        } else {
+            res.send({ "status": true, "message": "Usuario não verificado criado" });
+        }
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+module.exports = { SigninUserControllerFn, SignupUserControllerFn, VerifyUserControllerFn, getDataControllerFn,AferitionrControllerFn };
 

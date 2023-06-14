@@ -26,6 +26,14 @@ var employeeSchema = new Schema({
         type: Number,
         required: true
     },
+    aferation: {
+        type: Array,
+        required: false
+    },
+    schedules: {
+        type: Array,
+        required: false
+    }
 });
 
 module.exports = mongoose.model('Usuario', employeeSchema);

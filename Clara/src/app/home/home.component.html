@@ -1,57 +1,110 @@
 <!-- <SECTION> DE LOADING-->
 
 <section class="fullscreen-section d-flex align-items-center justify-content-center">
-    <div class="container text-center">
-        <img src="../../assets/loadingLogo.png" alt="Imagem" class="img-fluid">
-        <p class="mt-3">Saúde integrada a um toque.</p>
-    </div>
+  <div class="container text-center">
+    <img src="../../assets/loadingLogo.png" alt="Imagem" class="img-fluid">
+    <p class="mt-3">Saúde integrada a um toque.</p>
+  </div>
 </section>
 
 <section id="background">
 
-    <!-- HOME -->
+  <!-- HOME -->
 
-    <!-- HEADER -->
+  <!-- HEADER -->
 
-    <nav class="bg-blue">
-        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
-          <img class="image" [src]="toggleImage ? '../../assets/downButton.png' : '../../upButton.png'" alt=""
-            [ngClass]="toggleImage ? 'downButtonClass' : 'upButtonClass'">
-        </button>
-      </nav>
+  <nav class="bg-blue">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <img class="image" [src]="toggleImage ? '../../assets/downButtom.png' : '../../assets/upButtom.png'" alt=""
+        [ngClass]="toggleImage ? 'downButtonClass' : 'upButtonClass'">
+    </button>
+  </nav>
 
-      <div class="collapse navbar-collapse justify-content-end" [ngClass]="{ 'show': isNavbarOpen }" id="navbarMobile">
-        <ul class="navbar-nav navbarmenu">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Criar horário</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Salvar aferições</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Configurações</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sair</a>
-          </li>
-        </ul>
+  <div class="collapse navbar-collapse justify-content-end blue-bg" [ngClass]="{ 'show': isNavbarOpen }"
+    id="navbarMobile">
+    <ul class="navbar-nav navbarmenu">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Criar horário</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="afericoes()">Salvar aferições</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Configurações</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="Deslogar()">Sair</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- <button (click)="Deslogar()">sair</button> -->
+
+  <!-- PÁGINA PRINCIPAL -->
+
+  <div class="d-flex align-items-center justify-content-center vh-100" id="home">
+
+    <div class="d-flex align-items-start" style="position: absolute; top: 70px; left: 30px;">
+      <img src="../../assets/emptyUser.png" class="mr-3" width="32px" height="32px"
+        style="border: 1px solid #57B8D6; border-radius: 100%;">
+      <div class="p-2">
+        <p style="font-size: 14px;" id="nomeusuario">{{ Name }}</p>
+      </div>
+    </div>
+
+    <h3 class="TittleAcess">O que você quer acessar hoje?</h3>
+
+  </div>
+
+  <div class="BotõesDiv">
+    <button type="button">Medicações</button>
+    <button type="button">Aferições</button>
+    <button type="button">Minha Saúde</button>
+  </div>
+
+  <div class="Aferições">
+
+    <div class="Header">
+      <h3 class="TittleAferições">Suas aferições de: </h3>
+
+      <div class="custom-select" (click)="toggleOptions()" [ngClass]="{'open': showOptions}">
+        <div class="selected-option">
+          {{ selectedOption }}
+          <img *ngIf="isSelected" src="../../assets/caret-up-fill.png" alt="Ícone" class="icon">
+          <img *ngIf="!isSelected" src="../../assets/caret-down-fill.png" alt="Ícone" class="icon">
+        </div>
+        <div class="options">
+          <div class="option" *ngFor="let option of options; let i = index" (click)="selectOption(option, i)"
+            [class.selected]="isSelectedOption(i)">
+            {{ option }}
+          </div>
+        </div>
       </div>
 
-    <!-- <button (click)="Deslogar()">sair</button> -->
+    </div>
 
-    <!-- PÁGINA PRINCIPAL -->
 
-    <div class="d-flex align-items-center justify-content-center vh-100" id="home">
+    <div class="Body">
+      <div class="Forms">
+        <ul class="ulForms">
+        </ul>
+      </div>
+    </div>
 
-        <div class="d-flex align-items-start" style="position: absolute; top: 50px; left: 10px;">
-            <img src="../../assets/emptyUser.png" class="mr-3" width="32px" height="32px" style="border: 1px solid #57B8D6; border-radius: 100%;">
-            <div class="p-2">
-                <p style="font-size: 14px;">Olá, usuario.</p>
-            </div>
-        </div>
+  </div>
 
-    </div>    
+  <h3 class="TittleHorarios">Sua próxima medicação</h3>
+  <div class="horario">
+    <div class="horario-content">
+      <h1 class="HorarioTittle">08h00</h1>
+      <ul class="UlHorarios">
+        <li>Levotiroxina</li>
+        <li>88mg</li>
+        <li>com água</li>
+      </ul>
+    </div>
+  </div>
 
-    <!-- FIM -->
+  <!-- FIM -->
 
 </section>

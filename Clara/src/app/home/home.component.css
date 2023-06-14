@@ -53,16 +53,252 @@
   align-items: center;
   background-color: #1F9BC1;
   height: 48px;
-  padding: 10px;
+  padding: 0 20px;
+}
+
+.blue-bg {
+  position: relative;
+  background-color: #8DD5EA;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  z-index: 500;
 }
 
 
 .downButtonClass {
-  width: 72;
-  height: 40;
+  width: 75;
+  height: 24;
 }
 
 .upButtonClass {
-  width: 72;
-  height: 40;
+  width: 69.94;
+  height: 16.25;
+}
+
+.navbarmenu {
+  padding: 10px 20px;
+}
+
+.navbarmenu li {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+}
+
+.TittleAcess {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  position: absolute;
+  left: 30px;
+  top: 136px;
+}
+
+.BotõesDiv {
+  position: absolute;
+  top: 190px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+}
+
+.BotõesDiv button {
+  background: #1F9BC1;
+  border-radius: 10px 0px;
+  width: 110px;
+  height: 110px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 10px;
+  color: #FFFFFF;
+  border: none;
+}
+
+.Header {
+  position: absolute;
+  left: 30px;
+  top: 340px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.TittleAferições {
+  padding: 0 30px 0 0;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.custom-select {
+  height: 300px;
+  position: relative;
+  display: inline-block;
+}
+
+.selected-option {
+  padding: 6px 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  width: 154px;
+  height: 29px;
+  background: #1F9BC1;
+  border-radius: 3px 3px 0px 0px;
+  cursor: pointer;
+}
+
+.options {
+  position: absolute;
+  display: none;
+  width: 160px;
+  background: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 0px 0px 3px 3px;
+  z-index: 200;
+}
+
+.option {
+  padding: 6px 12px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  cursor: pointer;
+  display: block;
+  width: 104%;
+  box-sizing: border-box;
+  border: 1px solid #CCCCCC;
+}
+
+.option.selected {
+  background-color: #1F9BC1;
+  color: white;
+}
+
+.custom-select.open .options {
+  display: block;
+}
+
+.icon {
+  margin-left: 1px;
+  float: right;
+}
+
+.Forms {
+  padding: 4px 0;
+  position: absolute;
+  width: 360px;
+  height: 190px;
+  top: 390px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #BAE5F3;
+  border-radius: 5px;
+}
+
+.ulForms {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.liBlueLight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #9C9C9C;
+  height: 18px;
+  background: #BAE5F3;
+  padding: 0 0 0 20px ;
+}
+
+.liBlueLight i {
+  display: inline-block;
+  width: 25%;
+}
+
+.liBlueDark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #9C9C9C;
+  height: 18px;
+  background: #8DD5EA;
+  padding: 0 0 0 20px;
+}
+
+.liBlueDark i {
+  display: inline-block;
+  width: 25%; 
+}
+
+.TittleHorarios {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  position: absolute;
+  left: 30px;
+  top: 610px;
+}
+
+.horario {
+  position: absolute;
+  width: 360px;
+  height: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 650px;
+  background: #BAE5F3;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.HorarioTittle {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 72px;
+  display: inline-block;
+  margin:  0 15px;
+}
+
+.horario-content {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.UlHorarios {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin:  0 15px;
+  display: inline-block;
+}
+
+.UlHorarios li {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
 }

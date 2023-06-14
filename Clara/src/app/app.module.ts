@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { MeasurementsComponent } from './measurements/measurements.component';
 import { ScheduleComponent } from './schedule/schedule.component';
+import { AferationComponent } from './aferation/aferation.component';
+import { RegisterAferetionComponent } from './register-aferetion/register-aferetion.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ScheduleComponent } from './schedule/schedule.component';
     HomeComponent,
     MeasurementsComponent,
     ScheduleComponent,
+    AferationComponent,
+    RegisterAferetionComponent,
   ],
   imports: [
     BrowserModule,
