@@ -117,32 +117,69 @@ module.exports.getDataFromDBService = (id) => {
       usuarioModel.findOne(checkQuery)
         .exec()
         .then((result) => {
-          if (!result || !result.aferation || result.aferation.length === 0) {
-            throw new Error('Usuário não encontrado ou campo "aferation" não existe');
-          }
-  
-          const lastAferation = result.aferation[result.aferation.length - 1];
-          const selectedAferation = Aferition.aferation;
-          if (!lastAferation.hasOwnProperty(selectedAferation)) {
-            throw new Error(`Aferation '${selectedAferation}' não encontrada`);
-          }
-  
-          lastAferation[selectedAferation].push(Aferition.table);
-  
+          const aferationObj = result.aferation.find(item => item.hasOwnProperty(Aferition.sinalAfericao));
+          const aferitionsinal = aferationObj ? aferationObj[Aferition.sinalAfericao] : [];
+          
+          const novoObjeto = {
+            valor: Aferition.valor,
+            unid: Aferition.unid,
+            day: new Date().toLocaleDateString(),
+            time: new Date().toLocaleTimeString()
+          };
+          
+          aferitionsinal.push(novoObjeto);
+          
+          result.markModified('aferation');
+          
           return result.save();
         })
-        .then((result) => {
-          if (result) {
-            resolve(result);
-          } else {
-            throw new Error('Usuário não encontrado');
-          }
+        .then(savedResult => {
+          console.log('Alterações salvas:', savedResult);
+          resolve(savedResult); 
         })
         .catch((error) => {
           reject(error);
         });
     });
   };
+  
+  module.exports.SchedulepostDBService = (Aferition, id) => {
+    return new Promise((resolve, reject) => {
+      const checkQuery = { _id: id };
+      usuarioModel.findOne(checkQuery)
+        .exec()
+        .then((result) => {
+          const schedules = result.schedules || []; // Define um array vazio por padrão
+  
+          const novoObjeto = {
+            name: Aferition.name,
+            con: Aferition.con,
+            unidcon: Aferition.unidcon,
+            dos: Aferition.dos,
+            dias: Aferition.dias,
+            hor: Aferition.hor,
+            dur: Aferition.dur,
+            durcon: Aferition.durcon,
+            obs: Aferition.obs
+          };
+  
+          schedules.push(novoObjeto);
+  
+          result.markModified('schedules');
+  
+          return result.save();
+        })
+        .then(savedResult => {
+          console.log('Alterações salvas:', savedResult);
+          resolve(savedResult);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  };
+  
+  
   
   
   

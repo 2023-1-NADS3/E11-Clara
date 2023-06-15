@@ -44,7 +44,7 @@
 
 #background {
   background-color: #E5E5E5;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 
 .bg-blue {
@@ -113,7 +113,7 @@
 .BotõesDiv button {
   background: #1F9BC1;
   border-radius: 10px 0px;
-  width: 110px;
+  width: 150px;
   height: 110px;
   font-style: normal;
   font-weight: 400;
@@ -199,7 +199,7 @@
 }
 
 .Forms {
-  padding: 4px 0;
+  padding: 6px 0 0 0 ;
   position: absolute;
   width: 360px;
   height: 190px;

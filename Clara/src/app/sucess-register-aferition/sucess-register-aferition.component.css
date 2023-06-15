@@ -1,0 +1,56 @@
+.fullscreen-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4AB3D3;
+    z-index: 9999;
+    animation: fadeOut 0.5s ease-in-out 2s forwards;
+}
+
+a {
+    cursor: pointer;
+}
+
+.fullscreen-section .container {
+    max-width: 400px;
+}
+
+#logar {
+    transition: all 0.5s linear;
+}
+#main {
+    transition: all 0.5s linear;
+}
+#second {
+    transition: all 0.5s linear;
+}
+.fullscreen-section img,
+.fullscreen-section p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+}
+.fullscreen-section a{
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+}
+.fullscreen-section button{
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

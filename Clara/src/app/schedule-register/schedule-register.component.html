@@ -1,0 +1,116 @@
+<div class="ball" id="ball"></div>
+<div id="cadatroafericoes">
+<div class="container">
+    <h2>Cadastro de Medicação</h2>
+    <div class="formularioMedicacao">
+      <div class="nomeMedicamento">
+        <label for="nomeMed">Nome do Medicamento</label>
+        <input
+          type="text"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Vitamina C"
+          [(ngModel)]="name"
+        />
+      </div>
+      <div class="ladoAlado">
+        <div class="Cdose">
+          <label for="concentracaoDose">Concentração por dose</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput2"
+            placeholder="500"
+            [(ngModel)]="con"
+          />
+        </div>
+        <div class="unidade">
+          <label for="unidade">Unid.</label>
+          <input
+            type="text"
+            class="unidade"
+            id="unidade"
+            placeholder="mg"
+            [(ngModel)]="unidcon"
+          />
+        </div>
+      </div>
+      <div class="ladoAlado">
+        <div class="doses-por-dia">
+          <label for="doses-por-dia">Doses por dia</label>
+          <input
+            type="text"
+            class="doses-por-dia"
+            id="doses-por-dia"
+            placeholder=" "
+            [(ngModel)]="dos"
+          />
+        </div>
+        <div class="dias-semana">
+          <label for="dias-semana">Dias/Semana</label>
+          <select class="dias-semana" id="dias-semana" [(ngModel)]="dias">
+            <option>Domingo</option>
+            <option>Segunda-feira</option>
+            <option>Terça-feira</option>
+            <option>Quarta-feira</option>
+            <option>Quinta-feira</option>
+            <option>Sexta-feira</option>
+            <option>Sábado</option>
+          </select>
+        </div>
+      </div>
+      <div class="ladoAlado">
+        <div class="horarios">
+          <label for="horarios">Horários</label>
+          <input
+            type="text"
+            class="horarios"
+            id="horarios"
+            placeholder="12h30"
+            [(ngModel)]="hor"
+          />
+        </div>
+      </div>
+  
+      <div class="ladoAlado">
+        <div class="duracao-tratamento">
+          <label for="duracao-tratamento">Duração do tratamento</label>
+          <input
+            type="text"
+            class="duracao-tratamento"
+            id="duracao-tratamento"
+            placeholder="1"
+            [(ngModel)]="dur"
+          />
+        </div>
+        <div class="unidade">
+          <label for="unidade">Unid.</label>
+          <input
+            type="text"
+            class="unidade"
+            id="unidade"
+            placeholder="mg"
+            [(ngModel)]="durcon"
+          />
+        </div>
+      </div>
+  
+      <div class="ladoAlado">
+        <div class="observacoes">
+          <label for="observacoes">Observações</label>
+          <textarea
+            class="observacoes"
+            id="observacoes"
+            rows="3"
+            placeholder="Tomar após o almoço com água"
+            [(ngModel)]="obs"
+          ></textarea>
+        </div>
+      </div>
+      <div class="botoesVoltarEcadastrar">
+        <button class="botaoVoltar" (click)="cancelar()">Cancelar</button>
+        <button class="botaoCadastrar" (click)="cadastrar()">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>

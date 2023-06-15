@@ -12,7 +12,19 @@ h2 {
     margin-top: 20px;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .CadastrarAfericoes {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out 0.5s forwards;
     font-size: 18px;
     margin: 0;
     display: flex;
@@ -47,7 +59,7 @@ label {
     font-size: 16px;
 }
 
-.AfericoesValor{
+.AfericoesValor {
     margin: 0 10px 0 0;
     width: 300px;
 }
@@ -76,8 +88,9 @@ label {
     border: none;
     border-radius: 6px;
     font-size: 16px;
-    width: 169px;
-    margin: 0 5px;
+    width: 131px;
+    height: 33px;
+    margin: 20px 30px 0 0;
 }
 
 .botaoCadastrar {
@@ -87,8 +100,13 @@ label {
     border: none;
     border-radius: 6px;
     font-size: 16px;
-    width: 169px;
-    margin: 0 5px;
+    width: 131px;
+    height: 33px;
+    margin: 20px 0;
+}
+
+#cadatroafericoes{
+    transition: all 0.5s ease;
 }
 
 input {
@@ -98,9 +116,78 @@ input {
     height: 32px;
 }
 
-select { 
+select {
     background: #FFFFFF;
     border: 1px solid #CCCCCC;
     border-radius: 2px;
     height: 32px;
+    width: 500px;
 }
+
+
+.custom-select {
+    height: 50px;
+    position: sticky;
+    display: inline-block;
+}
+
+.selected-option {
+    padding: 6px 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    width: 370px;
+    height: 29px;
+    background: #1F9BC1;
+    border-radius: 3px 3px 0px 0px;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+}
+
+.options {
+    position: absolute;
+    display: none;
+    width: 370;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 0px 0px 3px 3px;
+    z-index: 200;
+}
+
+.option {
+
+    padding: 6px 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    width: 370px;
+    box-sizing: border-box;
+    border: 1px solid #CCCCCC;
+}
+
+.option.selected {
+    background-color: #1F9BC1;
+    color: white;
+}
+
+.custom-select.open .options {
+    display: block;
+}
+
+.ball {
+    width: 0px;
+    height: 0px;
+    background-color: #4AB3D3;
+    border-radius: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+  }

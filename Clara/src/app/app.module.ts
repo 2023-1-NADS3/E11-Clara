@@ -12,6 +12,11 @@ import { MeasurementsComponent } from './measurements/measurements.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { AferationComponent } from './aferation/aferation.component';
 import { RegisterAferetionComponent } from './register-aferetion/register-aferetion.component';
+import { SucessRegisterAferitionComponent } from './sucess-register-aferition/sucess-register-aferition.component';
+import { CheckAferitionComponent } from './check-aferition/check-aferition.component';
+import { ScheduleRegisterComponent } from './schedule-register/schedule-register.component';
+import { ScheduleRegisterSucessComponent } from './schedule-register-sucess/schedule-register-sucess.component';
+import { ScheduleRegisterCheckComponent } from './schedule-register-check/schedule-register-check.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,11 @@ import { RegisterAferetionComponent } from './register-aferetion/register-aferet
     ScheduleComponent,
     AferationComponent,
     RegisterAferetionComponent,
+    SucessRegisterAferitionComponent,
+    CheckAferitionComponent,
+    ScheduleRegisterComponent,
+    ScheduleRegisterSucessComponent,
+    ScheduleRegisterCheckComponent,
   ],
   imports: [
     BrowserModule,

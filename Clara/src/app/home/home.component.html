@@ -24,13 +24,10 @@
     id="navbarMobile">
     <ul class="navbar-nav navbarmenu">
       <li class="nav-item">
-        <a class="nav-link" href="#">Criar horário</a>
+        <a class="nav-link" (click)="schedule()">Criar horário</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="afericoes()">Salvar aferições</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Configurações</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="Deslogar()">Sair</a>
@@ -46,7 +43,7 @@
 
     <div class="d-flex align-items-start" style="position: absolute; top: 70px; left: 30px;">
       <img src="../../assets/emptyUser.png" class="mr-3" width="32px" height="32px"
-        style="border: 1px solid #57B8D6; border-radius: 100%;">
+        style="border-radius: 100%;">
       <div class="p-2">
         <p style="font-size: 14px;" id="nomeusuario">{{ Name }}</p>
       </div>
@@ -57,9 +54,8 @@
   </div>
 
   <div class="BotõesDiv">
-    <button type="button">Medicações</button>
-    <button type="button">Aferições</button>
-    <button type="button">Minha Saúde</button>
+    <button type="button" (click)="schedule()">Medicações</button>
+    <button type="button" (click)="afericoes()">Aferições</button>
   </div>
 
   <div class="Aferições">

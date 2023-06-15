@@ -1,0 +1,258 @@
+.container {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin-bottom: 20px;
+    bottom: 2px;
+    margin-top: 200px;
+}
+
+*/ .container {
+    position: absolute;
+    top: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.titulo {
+    margin-left: 20px;
+    margin-top: 104px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 16px
+}
+
+.textomeio {
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+h4 {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.selecione-medicamento {
+    text-align: center;
+    width: 370px;
+    height: 205px;
+    margin-left: 10px;
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cards-medicacao {
+    display: flex;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.SelecaoSinal {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    margin-bottom: 20px;
+}
+
+.passada {
+    background-color: #BAE5F3;
+    border-radius: 5px;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+h2 {
+
+    font-weight: bold;
+    font-size: 50px;
+}
+
+h1 {
+    font-weight: medium;
+    font-size: 18px;
+}
+
+label {
+    font-size: 16px;
+}
+
+.botaoVoltar {
+    background-color: #1F9BC1;
+    padding: 5px 0;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 131px;
+    height: 33px;
+    margin: 0;
+    margin-top: 20px;
+    position: absolute;
+    right: 20px;
+    margin-bottom: 20px;
+}
+
+.medicamento-selecionar {
+    margin-top: 100px;
+}
+
+select {
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 2px;
+    height: 32px;
+    width: 500px;
+    z-index: 900;
+}
+
+
+.custom-select {
+    height: 50px;
+    position: sticky;
+    display: inline-block;
+    z-index: 900;
+}
+
+.selected-option {
+    padding: 6px 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    width: 370px;
+    height: 29px;
+    background: #1F9BC1;
+    border-radius: 3px 3px 0px 0px;
+    cursor: pointer;
+    margin: 10px 0 0 0;
+    z-index: 900;
+}
+
+.options {
+    position: absolute;
+    display: none;
+    width: 370;
+    background: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 0px 0px 3px 3px;
+    z-index: 900;
+}
+
+.icon {
+    margin-left: 200px;
+    float: right;
+}
+
+.option {
+
+    padding: 6px 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    width: 370px;
+    box-sizing: border-box;
+    border: 1px solid #CCCCCC;
+}
+
+.option.selected {
+    background-color: #1F9BC1;
+    color: white;
+}
+#main {
+    transition: all 0.5s linear;
+}
+.custom-select.open .options {
+    display: block;
+}
+
+.Forms {
+    padding: 4px 0;
+    position: absolute;
+    width: 330px;
+    height: 370px;
+    top: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #BAE5F3;
+    border-radius: 5px;
+}
+
+.ulForms {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.liBlueLight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #9C9C9C;
+    height: 18px;
+    background: #BAE5F3;
+    padding: 0 0 0 20px;
+}
+
+.liBlueLight i {
+    display: inline-block;
+    width: 25%;
+}
+
+.liBlueDark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #9C9C9C;
+    height: 18px;
+    background: #8DD5EA;
+    padding: 0 0 0 20px;
+}
+
+.liBlueDark i {
+    display: inline-block;
+    width: 25%;
+}
+
+.TittleHorarios {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    position: absolute;
+    left: 30px;
+    top: 610px;
+}

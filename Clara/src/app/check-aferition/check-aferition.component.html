@@ -1,0 +1,39 @@
+<div class="container" id="main">
+    <h2 class="titulo">Evolução das Aferições</h2>
+    <div class="medicamento-selecionar">
+        <h4>Selecione um sinal</h4>
+        <div class="custom-select" (click)="toggleOptions()" [ngClass]="{'open': showOptions}" id="optionselected">
+            <div class="selected-option">
+                {{ selectedOption }}
+                <img *ngIf="isSelected" src="../../assets/caret-up-fill.png" alt="Ícone" class="icon">
+                <img *ngIf="!isSelected" src="../../assets/caret-down-fill.png" alt="Ícone" class="icon">
+            </div>
+            <div class="options">
+                <div class="option" *ngFor="let option of options; let i = index" (click)="selectOption(option, i)"
+                    [class.selected]="isSelectedOption(i)">
+                    {{ option }}
+                </div>
+            </div>
+        </div>
+        <div class="selecione-medicamento" id="sm">
+            <div *ngIf="!show">
+                <h1 style="margin-top: 60px;" class="texto-meio">Você não selecionou um sinal.</h1>
+                <h6>Selecione um sinal para <br>visualizar mais informações.</h6>
+            </div>
+            <div *ngIf="show">
+                <div class="Body">
+                    <div class="Forms" id="forms" style=" overflow: auto;">
+                        <ul class="ulForms">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="buttonVoltar">
+            <button class="botaoVoltar" (click)="voltar()">Voltar</button>
+        </div>
+    </div>
+</div>

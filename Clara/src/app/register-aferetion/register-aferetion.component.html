@@ -1,13 +1,23 @@
-<div class="CadastrarAfericoes">
-    <h2>Cadastro de Aferições</h2>
+<div class="ball" id="ball"></div>
+<div id="cadatroafericoes">
+<div class="CadastrarAfericoes d-flex flex-column align-items-center justify-content-center" >
+    <h2 >Cadastro de Aferições</h2>
     <div class="container">
       <div class="AfericoesSinal">
         <label for="SinalAfericao" class="label-esquerda">Sinal de Aferição</label>
-        <select class="form-control" id="sinalAfericao" [(ngModel)]="sinalAfericao">
-          <option value="Glicemia">Glicemia</option>
-          <option value="Oxigenação">Oxigenação</option>
-          <option value="Pressão arterial">Pressão arterial</option>
-        </select>
+        <div class="custom-select" (click)="toggleOptions()" [ngClass]="{'open': showOptions}"  id="optionselected">
+          <div class="selected-option">
+            {{ selectedOption }}
+            <img *ngIf="isSelected" src="../../assets/caret-up-fill.png" alt="Ícone" class="icon">
+            <img *ngIf="!isSelected" src="../../assets/caret-down-fill.png" alt="Ícone" class="icon">
+          </div>
+          <div class="options">
+            <div class="option" *ngFor="let option of options; let i = index" (click)="selectOption(option, i)"
+              [class.selected]="isSelectedOption(i)">
+              {{ option }}
+            </div>
+          </div>
+        </div>
       </div>
   
       <div class="ladoAlado">
@@ -24,8 +34,8 @@
     </div>
   
     <div class="botoesCancelarCadastrar">
-      <button class="botaoCancelar" routerLink="">Cancelar</button>
+      <button class="botaoCancelar" (click)="cancelar()">Cancelar</button>
       <button class="botaoCadastrar" (click)="cadastrar()">Cadastrar</button>
     </div>
   </div>
-  
+</div>
